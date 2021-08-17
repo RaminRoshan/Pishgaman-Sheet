@@ -1,15 +1,13 @@
 {
-    "name": "Pishgaman/Sheet",
-    "description": "Pishgaman Sheet",
-    "authors": [{
-        "name": "Ramin Roshanghiyas",
-        "email": "ramin.roshanghiyas@gmail.com"
-    }],
-    "require": {},
-    "autoload": {
-        "psr-4": {
-            "Pishgaman\\Sheet\\": "src/"
+    "name": "pishgaman/sheet",
+    "description": "This is a comprehensive Laravel package for getting Excel and PDF output. phpspreadsheet And mpdf are the libraries used in this package.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ramin Roshanghiyas",
+            "email": "Ramin.roshanghiyas@gmail.com"
         }
-    }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
 }
-
