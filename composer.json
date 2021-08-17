@@ -8,6 +8,23 @@
             "email": "Ramin.roshanghiyas@gmail.com"
         }
     ],
+    "keywords": ["Laravel","PDF","Excel","Pishgaman"],
+    "require": {
+        "php": "^7.2.5|^8.0"
+    },
+    "require-dev" : {
+    },
+    "autoload": {
+        "psr-4": {
+            "Pishgaman\\Sheet\\": "src"
+        }
+    },        
     "minimum-stability": "dev",
-    "require": {}
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Pishgaman\\Sheet\\SheetServiceProvider"
+            ]
+        }
+    }    
 }
