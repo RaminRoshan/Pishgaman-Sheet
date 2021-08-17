@@ -1,0 +1,15 @@
+{
+    "name": "Pishgaman/Sheet",
+    "description": "Pishgaman Sheet",
+    "authors": [{
+        "name": "Ramin Roshanghiyas",
+        "email": "ramin.roshanghiyas@gmail.com"
+    }],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Pishgaman\\Sheet\\": "src/"
+        }
+    }
+}
+
