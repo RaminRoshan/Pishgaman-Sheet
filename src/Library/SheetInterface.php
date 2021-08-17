@@ -21,4 +21,7 @@ interface SheetInterface
 
     //create excele file
     public function createWriter($spreadsheet);
+
+    //
+    public function putInServer($spreadsheet,$path,$name);
 }

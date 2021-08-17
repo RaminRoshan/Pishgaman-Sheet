@@ -5,6 +5,7 @@ namespace Pishgaman\Sheet\Library;
 use Pishgaman\Sheet\Library\SheetInterface;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use Illuminate\Support\Facades\File;
 
 class phpspreadsheet implements SheetInterface
 {
@@ -40,11 +41,24 @@ class phpspreadsheet implements SheetInterface
         return base_path('../media/excel/' . $name);
     }
 
-    public function putInServer($spreadsheet)
+    public function putInServer($spreadsheet,$path='public/cache',$name='pishgaman')
     {
-        $writer = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($spreadsheet, 'Xlsx');
-        $writer->save(base_path('../media/cache/putInServerDrom.xlsx'));
-        return url('/media/cache/putInServerDrom.xlsx');
+        try {
+            $writer = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($spreadsheet, 'Xlsx');
+            $writer->save(base_path($path.'/'.$name.'.Xlsx'));
+            $url = url($path.'/'.$name.'.Xlsx');            
+        } catch (\Throwable $th) {
+            File::makeDirectory(base_path($path));
+            $writer = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($spreadsheet, 'Xlsx');
+            $writer->save(base_path($path.'/'.$name.'.Xlsx'));
+            $url = url($path.'/'.$name.'.Xlsx');            
+        }
+
+        return [
+            'url'=>$url,
+            'fileName'=>$name.'.Xlsx'
+        ];
+
     }
 
     public function init()
