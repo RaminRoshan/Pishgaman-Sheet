@@ -10,6 +10,9 @@ interface SheetInterface
     public function setFormatCode($spreadsheet,$Cell,$format,$setFormatCode,$index);
     public function setAutoSize($spreadsheet,$index,$Column);
 
+    public function mergeCells($spreadsheet,$range);
+    public function unmergeCells($spreadsheet,$range);
+
     //create worksheet
     public function createSheet($spreadsheet);
 
