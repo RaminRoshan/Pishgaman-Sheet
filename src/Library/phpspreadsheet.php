@@ -18,11 +18,9 @@ class phpspreadsheet implements SheetInterface
     {
         $spreadsheet->getSheet($i)->setRightToLeft($rtl)
             ->fromArray(
-                $arrayData,  // The data to set
-                NULL,        // Array values with this value will not be set
-                'A1'  ,       // Top left coordinate of the worksheet range where
-                             //    we want to set these values (default is A1)
-                
+                $arrayData,
+                NULL,
+                'A1'  
             );
         return $spreadsheet;
     }

@@ -11,7 +11,7 @@
     ],
     "keywords": ["Laravel","PDF","Excel","Pishgaman"],
     "require": {
-        "php": "^7.2.5|^8.0"
+        "php": "^7.0|^8.0"
     },
     "require-dev" : {
     },
