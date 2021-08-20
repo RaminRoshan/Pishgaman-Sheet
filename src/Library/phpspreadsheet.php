@@ -20,7 +20,7 @@ class phpspreadsheet implements SheetInterface
             ->fromArray(
                 $arrayData,
                 NULL,
-                'A1'                 
+                'A1'
             );
         return $spreadsheet;
     }
@@ -64,6 +64,11 @@ class phpspreadsheet implements SheetInterface
         $spreadshee = new Spreadsheet();
         $this->removeSheet($spreadshee,0);
         return $spreadshee;
+    }
+
+    public function setHorizontal($spreadsheet,$range,$Alignment)
+    {
+        $spreadsheet->getActiveSheet()->getStyle($range)->getAlignment()->setHorizontal($Alignment);
     }
 
     public function mergeCells($spreadsheet,$range)

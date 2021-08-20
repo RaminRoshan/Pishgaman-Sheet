@@ -9,6 +9,7 @@ interface SheetInterface
 
     public function setFormatCode($spreadsheet,$Cell,$format,$setFormatCode,$index);
     public function setAutoSize($spreadsheet,$index,$Column);
+    public function setHorizontal($spreadsheet,$range,$Alignment);
 
     public function mergeCells($spreadsheet,$range);
     public function unmergeCells($spreadsheet,$range);
